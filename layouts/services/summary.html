@@ -1,0 +1,15 @@
+<a href="{{ .Permalink }}">
+    <div class="summary border p-3">
+        <h2 class="text-3xl">
+            {{ .Title }}
+        </h2>
+        {{ if .Params.image }}
+        <img id="thumb" alt="{{.Title}}" class="aspect-video object-cover w-auto lg:h-40"
+            src="{{ .Params.image | relURL }}" />
+        {{ else }}
+        <img id="thumb" alt="{{.Title}}" class="aspect-video object-cover w-auto lg:h-40"
+            src='{{ "/img/default.jpg" | relURL }}'>
+        {{ end }}
+        <p class="grid-space">{{ .Description }}</p>
+    </div>
+</a>
